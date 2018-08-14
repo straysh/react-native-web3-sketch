@@ -5,15 +5,21 @@
   "scripts": {
     "debug": "adb logcat *:S ReactNative:V ReactNativeJS:V",
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "test_lib": "jest test/**/*.spec.js"
   },
   "dependencies": {
+    "native-base": "^2.7.2",
     "node-libs-browser": "^2.1.0",
     "prop-types": "^15.6.2",
     "react": "16.3.1",
     "react-native": "0.55.4",
+    "react-native-bip39": "file:///app/straysh/react-native-modules/react-native-bip39",
+    "react-native-fast-crypto": "/app/straysh/react-native-modules/react-native-fast-crypto",
+    "react-native-randombytes": "/app/straysh/react-native-modules/react-native-randombytes",
     "react-native-splash-screen": "^3.1.0",
     "react-native-storage": "^0.2.2",
+    "react-native-svg": "^6.5.2",
     "react-navigation": "^2.8.0",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
@@ -25,8 +31,10 @@
     "babel-jest": "23.4.0",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "babel-preset-react-native": "^4.0.0",
     "jest": "23.4.1",
+    "proxyquire": "^2.0.1",
     "react-test-renderer": "16.4.1"
   },
   "jest": {

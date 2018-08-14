@@ -7,8 +7,19 @@
     [
       "module-resolver",
       {
-        "cwd": "babelrc"
+        "cwd": "babelrc",
+        "root": "./src",
+        "alias": {
+          "assets": "./assets"
+        }
       }
     ]
-  ]
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        "transform-remove-console"
+      ]
+    }
+  }
 }
