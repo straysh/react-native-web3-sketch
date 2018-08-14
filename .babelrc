@@ -10,7 +10,8 @@
         "cwd": "babelrc",
         "root": "./src",
         "alias": {
-          "assets": "./assets"
+          "assets": "./assets",
+          "tests": "./tests"
         }
       }
     ]

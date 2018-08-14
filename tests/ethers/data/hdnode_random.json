@@ -1,0 +1,168 @@
+[
+  {
+    "entropy": "0xb0a30c7e93a58094d213c4c0aaba22da",
+    "mnemonic": "radar blur cabbage chef fix engine embark joy scheme fiction master release",
+    "seed": "0xed37b3442b3d550d0fbb6f01f20aac041c245d4911e13452cac7b1676a070eda66771b71c0083b34cc57ca9c327c459a0ec3600dbaf7f238ff27626c8430a806",
+    "hdnodes": [
+      {
+        "path": "m/44'/60'/0'/0/0",
+        "address": "0xac39b311dceb2a4b2f5d8461c1cdaf756f4f7ae9",
+        "privateKey": "0xb96e9ccb774cc33213cbcb2c69d3cdae17b0fe4888a1ccd343cbd1a17fd98b18"
+      }
+    ],
+    "name": "axic"
+  },
+  {
+    "entropy": "0xcafc5a75b83d4357163fb6ee6bbc4bdb",
+    "mnemonic": "slab tissue output idea stage process flight walnut unveil fuel base rent",
+    "seed": "0xd2a2e304426dba53eefa388ba3978176de03a31f8fcd14a5a65bd6b8c778975171166b8f4e33770b0bc255ecb9127ea6f02faefc2f0e9fbb607f37c2321f4a49",
+    "hdnodes": [
+      {
+        "path": "m",
+        "privateKey": "0xefe7c4fd7b30472ef15597b1fe4c3f8776c95084c6c72edcecabe4d07bc22314",
+        "address": "0x2c60b5c9eed3e4c9b3f0da0cb7f3d0093d44e288"
+      },
+      {
+        "path": "m/4'",
+        "privateKey": "0xc772128259754fd4bcb37388119c3bce133279d75d2b1c74f39434e5770e8454",
+        "address": "0x019813d93d7648db2913820963879a70a727bd63"
+      },
+      {
+        "path": "m/6'/6'/5'/2'/6'/7'",
+        "privateKey": "0xff03751213ce108fab6f3c283236a7f97e4406b2cae3109ce4f806dcb291738a",
+        "address": "0xc7e6c7d46e7dda8be992f81bae4a6bfdee11cd55"
+      },
+      {
+        "path": "m/6'/6'/1'/6'/4'/1'",
+        "privateKey": "0xc1540f6e76d9713528ee15a8874e1cc8166a3653dd70785fc0510095b8682f37",
+        "address": "0x39a4306863b701dec77c6eff3c7c2b0ab0525d0a"
+      },
+      {
+        "path": "m/2'/6'/1'/6'/1",
+        "privateKey": "0x5c6164d36bd77b7bb6b0524dd71e18dd23cb865e101932f7b08fed62c800494c",
+        "address": "0xf7fe5ec3ba93d53cbfa99615cbc421247e06b6aa"
+      },
+      {
+        "path": "m/3'/7'",
+        "privateKey": "0x078665c56333067cd42f3347dfa48d94043fcc8bb406d476b0708b140abbb4ae",
+        "address": "0x4a9a573e8f90dea127f57dcf683364f1a56bc5d2"
+      }
+    ],
+    "name": "random-0"
+  },
+  {
+    "entropy": "0xef304861bb654143d72c66f733e8bfc1ce1cfd0e",
+    "mnemonic": "upset liquid blur item favorite peanut frequent mimic warm palm copper logic tide leader depend",
+    "seed": "0x467e7462c07c45f2e1520920a0ebd104933bef617e85b5593ca7c79d9051640c6a5e6b0a0707c40618f44965ef489748904a34494ce2351bbce2c216e8a8ef88",
+    "hdnodes": [
+      {
+        "path": "m",
+        "privateKey": "0xcb9e81afb433b28bfa209d7b1930e537cf666f1fef82aee98d5f83b341c928ba",
+        "address": "0x8073881511f2f41ad1029d1e646942b2547b4bc9"
+      },
+      {
+        "path": "m/8'/1'",
+        "privateKey": "0xe02b4b8cbb8899f6d3e4d7e1c1fdb8bc398476d184f98fda7ffd5032994df5ee",
+        "address": "0xdae59bbb07eb4cd6aca85f33b1f4d06e2bf23238"
+      },
+      {
+        "path": "m/10'/5'/5'/5'",
+        "privateKey": "0xaa603a4c6be29ba2288d8dbf9454d5014242fd0aa4ca49b7b38f031121646abc",
+        "address": "0x49084361e0dbc662663e0f4707c51c3d41bb478c"
+      },
+      {
+        "path": "m/7'/9/7/4/8/9",
+        "privateKey": "0x0524c5c773a76608d016ff45f03e7879768296b165046cfa011adac6a969d3fd",
+        "address": "0x0240efada7d59829dfd05a444394c99adef14636"
+      },
+      {
+        "path": "m/2",
+        "privateKey": "0xb6c7abf389af25e97d02859de612279309cadf1f56f6b488b92aa254019d7ac4",
+        "address": "0xde7d07870568dcbdfd6adae423874ed96303ac7a"
+      },
+      {
+        "path": "m/4'",
+        "privateKey": "0xe0e77dd38fcb838989f3e0042f412a6ada95442040bc56a5a52ad63d5d931b4f",
+        "address": "0x5bb5111f5ea1321cf9299320330b47192822a8d9"
+      }
+    ],
+    "name": "random-512"
+  },
+  {
+    "entropy": "0x9f80b06974035211277473ab44089cf5faad42a4",
+    "mnemonic": "panel airport bottom trend cry ancient oven mobile prize cake cheese typical print pattern mother",
+    "seed": "0xe70f91c0d13b83de718310b94572b149d11c5aad2f9bc79017a7024b3c8e361669a4592f27e622f504ddb8f90087a1b348a0cad5e3313be7d27d79f491c96ba2",
+    "hdnodes": [
+      {
+        "path": "m",
+        "privateKey": "0x9d4dbf5bb7d3f954c64589093c6ed6c1f92c3fe9259ca788e983a3bca1f3b901",
+        "address": "0x3d1b189e03ba88b5b006f41c728ab1b72ee3edcb"
+      },
+      {
+        "path": "m/8'/1'/0'/0'/5",
+        "privateKey": "0xbea1e95dc7f2e67c06576aaadede2c325441dbff0cfdbd6d938c4969b3b241e4",
+        "address": "0xc12cafd2d10c1c2fb000eadc424708c021a75d4d"
+      },
+      {
+        "path": "m/4/6/7/6/6",
+        "privateKey": "0x30819f839849eaa71c6e395061bb7f21ef65fd318c89dbafd1316f6354bb64b1",
+        "address": "0x786f569286705ec4d0887ee30ac6df855ef78e12"
+      },
+      {
+        "path": "m/8'/7'/8/8/8",
+        "privateKey": "0xca5d4a852229896abedde22330a368516f6254e295c260b3ae09192de0451f8c",
+        "address": "0x1323128022e4d012c6d0b6e5229283770810b263"
+      },
+      {
+        "path": "m/4/7/5/8/1",
+        "privateKey": "0x72b1f6aafc04c94833cec9db994d69f4e64bd5cd811cbc6280640d1512e098b0",
+        "address": "0x8759f3b86dfecbda7c761a0042bde1072b1ea33a"
+      },
+      {
+        "path": "m/5",
+        "privateKey": "0x9022bf02815fa683ccf69fce633504a936d11b800fee8cd0e5f0d06a34c3148d",
+        "address": "0xae84db9803b94c98879a05510a6d72a2e094f6d6"
+      }
+    ],
+    "name": "random-730"
+  },
+  {
+    "entropy": "0x7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f",
+    "mnemonic": "legal winner thank year wave sausage worth useful legal winner thank year wave sausage worth useful legal winner thank year wave sausage worth title",
+    "seed": "0xbc09fca1804f7e69da93c2f2028eb238c227f2e9dda30cd63699232578480a4021b146ad717fbb7e451ce9eb835f43620bf5c514db0f8add49f5d121449d3e87",
+    "hdnodes": [
+      {
+        "path": "m",
+        "privateKey": "0xfe743fd5f203af53ccd9568df27f6d09d7f756a21ae9cd6135506844a90f45cf",
+        "address": "0xdd4727272facd5ae80c047e68b7e2a1c97e285e5"
+      },
+      {
+        "path": "m/4'/9'/6'/1'/8'",
+        "privateKey": "0xfffab9b60afb640f14917d207279c7d9b08573fe2b9a2a2202d22186d8976180",
+        "address": "0xde5fbd9c1b271163d4627c4215e4fe65b0a55756"
+      },
+      {
+        "path": "m/6'/0'",
+        "privateKey": "0x82af7b4e903fafc08a924606861a6f28d2c58009b2d3d421c2dda41702de6b5b",
+        "address": "0xd436960f6c3320687ef05387bbb08609e7e36070"
+      },
+      {
+        "path": "m/9'/6'",
+        "privateKey": "0xa160c12fadea5d018f3c9fd05c5782033dcc1391007f27fc74f33116fdd0acf3",
+        "address": "0x40e61a536133754ff107ffad40bf562567a7aadf"
+      },
+      {
+        "path": "m/7",
+        "privateKey": "0x680a44d661123f8c8531eb89908478aa524ccd52e5c630535ec843e372ff86b1",
+        "address": "0x2ba47521d2633655d5cb8e1dfc79353194f0beb8"
+      },
+      {
+        "path": "m/3'/11'/3'/5'",
+        "privateKey": "0xce0477ffeeb6f6fb99cd63b4009416f8b08d1eb9da8073f5a69475f0253ee774",
+        "address": "0xde04d02f3b8ff8c40879323a71054e18fe54f2c4"
+      }
+    ],
+    "password": "TREZOR",
+    "name": "trezor-9"
+  }
+]

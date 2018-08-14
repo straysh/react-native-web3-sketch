@@ -6,7 +6,7 @@ import {getDate} from './lib'
 export default class Renderlog extends Component {
   constructor(props) {
     super(props)
-    this.state = {log: []}
+    this.state = {log: [], progress: null}
   }
 
   componentDidMount() {
@@ -15,12 +15,25 @@ export default class Renderlog extends Component {
     run.bind(this)()
   }
 
+  progress = (p, max) => {
+    this.setState({progress: `${p + 1} / ${max}`})
+  }
   info = (...msg) => {
     const {log} = this.state
     log.push({
       type: `info`,
       header: `Info[${getDate()}]`,
       message: `${msg[0]} → ${msg[1]}`,
+    })
+    this.setState({log})
+  }
+  equal = (a, b, message = '') => {
+    const {log} = this.state
+    log.push({
+      type: `equal`,
+      result: a === b,
+      header: `Info[${getDate()}]`,
+      message: `${message}`,
     })
     this.setState({log})
   }
@@ -37,8 +50,15 @@ export default class Renderlog extends Component {
   renderItem = ({item}) => {
     return (
       <View style={{flexDirection: 'column', borderBottomWidth: 1, borderBottomColor: '#ccc', paddingLeft: 5, paddingRight: 5}}>
-        <Text style={{flex: 1}}>{item.header}</Text>
-        <Text style={{flex: 1}}>{item.message}</Text>
+        {/*<Text style={{flex: 1}}>{item.header}</Text>*/}
+        <View style={{flexDirection: 'row'}}>
+          <Text style={{flex: 1}}>{item.message}</Text>
+          {item.type !== 'equal' ? null : (
+            item.result ?
+              <Icon name="ios-checkmark" style={{color: 'green', width: 15}}/> :
+              <Icon name="ios-close" style={{color: 'red', width: 15}}/>
+          )}
+        </View>
       </View>
     )
   }
@@ -59,10 +79,13 @@ export default class Renderlog extends Component {
         </Header>
 
         <FlatList
-          data={this.state.log}
+          data={this.state.log.filter(item => {
+            return this.state.progress === null || item.result === false
+          })}
           keyExtractor={(item, index) => String(index)}
           renderItem={this.renderItem}
-          ListEmptyComponent={(<Text>~</Text>)}/>
+          ListEmptyComponent={(<Text>No Failed Testcase Found!</Text>)}
+          ListHeaderComponent={(<Text>{this.state.progress}</Text>)}/>
       </Container>
     )
   }
