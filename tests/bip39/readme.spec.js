@@ -34,15 +34,16 @@ test.skip('README example 2', async function () {
   // })
 })
 
-test('README example 3', function () {
-  tryAsync(async () => {
-    let mnemonic = 'basket actual'
-    let seed = await bip39.mnemonicToSeed(mnemonic)
-    let seedHex = await bip39.mnemonicToSeedHex(mnemonic)
-
-    expect(seed.toString('hex')).toEqual(seedHex)
-    expect(seedHex).toEqual('5cf2d4a8b0355e90295bdfc565a022a409af063d5365bb57bf74d9528f494bfa4400f53d8349b80fdae44082d7f9541e1dba2b003bcfec9d0d53781ca676651f')
-    expect(bip39.validateMnemonic(mnemonic)).toBe(false)
+test('README example 3', function (done) {
+  let mnemonic = 'basket actual'
+  bip39.mnemonicToSeed(mnemonic).then(seed => {
+    bip39.mnemonicToSeedHex(mnemonic).then(seedHex => {
+      expect(seed.toString('hex')).toEqual(seedHex)
+      expect(seedHex).toEqual('5cf2d4a8b0355e90295bdfc565a022a409af063d5365bb57bf74d9528f494bfa4400f53d8349b80fdae44082d7f9541e1dba2b003bcfec9d0d53781ca676651f')
+      console.log(seedHex)
+      console.log(`5cf2d4a8b0355e90295bdfc565a022a409af063d5365bb57bf74d9528f494bfa4400f53d8349b80fdae44082d7f9541e1dba2b003bcfec9d0d53781ca676651f`)
+      expect(bip39.validateMnemonic(mnemonic)).toBe(false)
+      done()
+    })
   })
-
 })

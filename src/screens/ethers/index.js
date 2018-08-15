@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {StyleSheet} from 'react-native'
 import {Body, Button, Container, Content, Header, Icon, Left, Right, Text, Title} from 'native-base'
 import ethers from 'ethers'
+import EthWallet from 'lib/EthWallet'
 import {tryAsync2 as tryAsync, wait} from 'utils'
 
 export default class EthersTest extends Component {
@@ -229,6 +230,44 @@ export default class EthersTest extends Component {
     }
   }
 
+  importMnemonic = function () {
+    tryAsync(this.error, async () => {
+      // const phrase = `table unhappy romance diary silent sugar exercise squirrel alarm tank like media`
+      const phrase = `word solid cart theory purse pupil tip place control electric rifle tag`
+      this.info(`mnemonic`, phrase)
+      let wallet = await EthWallet.FromMnemonic(phrase)
+      this.info(`address`, wallet.address)
+    })
+  }
+
+  importPrivkey = function () {
+    tryAsync(this.error, async () => {
+      const privkey = `0xba0790db5adb82e52752b78b40c0fe00cd234e44366e02979082124a41c62c29`
+      this.info(`privkey`, privkey)
+      let wallet = EthWallet.FromPrivkey(privkey)
+      this.info(`address`, wallet.address)
+    })
+  }
+
+  importKeystore = function () {
+    tryAsync(this.error, async () => {
+      const keystore = `{"address":"59548264d6335dae60bae332633636d990e49804","crypto":{"cipher":"aes-128-ctr","ciphertext":"c0ab8e972f962a26fb968124991cae22d714d9abbc7d8cd902daa4164a4df438","cipherparams":{"iv":"6729e78277a7fd7e7303e0623a678776"},"kdf":"scrypt","kdfparams":{"dklen":32,"n":262144,"p":1,"r":8,"salt":"93b3039bc872cb5f0bf7db57ddd506e04ec9ed3a5241a14e81c2b732a959c393"},"mac":"4e108e75209b5c0539081714d19928f244f69072851db8788c3bb3cbd2541e20"},"id":"27b59c39-e004-4190-9ffd-43f6df0e4a93","version":3}`
+      this.info(`keystore`, keystore)
+      let wallet = await EthWallet.FromKeystore(keystore, `123456789`)
+      this.info(`address`, wallet.address)
+    })
+  }
+
+  exportKeystore = function () {
+    tryAsync(this.error, async () => {
+      let wallet = await EthWallet.Random()
+      this.info(`privkey`, wallet.privkey)
+      this.info(`address`, wallet.address)
+      let ks = await wallet.exportKeystore(`123456`)
+      this.info(`keystore`, ks)
+    })
+  }
+
   sendEth = function () {
     tryAsync(this.error, async () => {
       await wait(100)
@@ -257,6 +296,49 @@ export default class EthersTest extends Component {
     })
   }
 
+  sendErc20 = function () {
+    tryAsync(this.error, async () => {
+      await wait(100)
+      let pharse = 'table unhappy romance diary silent sugar exercise squirrel alarm tank like media'
+      let wallet = ethers.Wallet.fromMnemonic(pharse)
+      let from = wallet.getAddress()
+      let provider = new ethers.providers.FallbackProvider([
+        new ethers.providers.JsonRpcProvider(`http://172.29.1.169:8845`, 'testnet'),
+        // new ethers.providers.EtherscanProvider(this.credentials.network === 'testnet'),
+      ])
+      wallet.provider = provider
+      const result = await provider.getBalance(from)
+      this.info(`balance:`, `${ethers.utils.fromWei(result)} ETH`)
+
+      const tx = {
+        from,
+        to: '0x952a50EA1C0BC0127738bFE8099eC76969543D4a',
+        value: ethers.utils.toWei('0.01'),
+        gasLimit: 21000,
+        // gasPrice: web3Utils.toWei(5, "Gwei"),
+        data: '0x',
+      }
+      this.info(`origin tx`, JSON.stringify(tx, null, 2))
+      const txhash = await wallet.sendTransaction(tx)
+      this.info(`tx hash`, txhash.hash)
+    })
+  }
+
+  walletLibrary = function () {
+    tryAsync(this.error, async () => {
+      await wait(100)
+      let pharse = 'table unhappy romance diary silent sugar exercise squirrel alarm tank like media'
+      const wallet = EthWallet.FromMnemonic(pharse)
+      wallet.setProvider('http://172.29.1.169:8845')
+      const balance = await wallet.getBalance(`0xB1bcEC4EB1f476673fef3d341E7eF2aAf596Ed4F`)
+      this.info(`${wallet.address} balance:`, balance)
+
+      // const tx = await wallet.send(`0x7768F5969C19CA5AaD8846343532B3348C5F11Da`, `0.01`)
+      const tx = await wallet.send(`0x7768F5969C19CA5AaD8846343532B3348C5F11Da`, `0.01`, `0xB1bcEC4EB1f476673fef3d341E7eF2aAf596Ed4F`)
+      console.log(tx)
+    })
+  }
+
   render() {
     return (
       <Container>
@@ -272,7 +354,7 @@ export default class EthersTest extends Component {
           <Right/>
         </Header>
 
-        <Content>
+        <Content style={{padding: 5}}>
           <Button block style={s.button}
                   onPress={() => {
                     this.props.navigation.navigate('Renderlog', {run: this.privkeyGeneration})
@@ -317,9 +399,51 @@ export default class EthersTest extends Component {
 
           <Button block style={s.button}
                   onPress={() => {
+                    this.props.navigation.navigate('Renderlog', {run: this.importMnemonic})
+                  }}>
+            <Text>导入助记词</Text>
+          </Button>
+
+          <Button block style={s.button}
+                  onPress={() => {
+                    this.props.navigation.navigate('Renderlog', {run: this.importPrivkey})
+                  }}>
+            <Text>导入私钥</Text>
+          </Button>
+
+          <Button block style={s.button}
+                  onPress={() => {
+                    this.props.navigation.navigate('Renderlog', {run: this.importKeystore})
+                  }}>
+            <Text>导入Keystore</Text>
+          </Button>
+
+          <Button block style={s.button}
+                  onPress={() => {
+                    this.props.navigation.navigate('Renderlog', {run: this.exportKeystore})
+                  }}>
+            <Text>导出Keystore</Text>
+          </Button>
+
+          <Button block style={s.button}
+                  onPress={() => {
                     this.props.navigation.navigate('Renderlog', {run: this.sendEth})
                   }}>
             <Text>Eth 交易</Text>
+          </Button>
+
+          <Button block style={s.button}
+                  onPress={() => {
+                    this.props.navigation.navigate('Renderlog', {run: this.sendErc20})
+                  }}>
+            <Text>Erc20 交易</Text>
+          </Button>
+
+          <Button block style={s.button}
+                  onPress={() => {
+                    this.props.navigation.navigate('Renderlog', {run: this.walletLibrary})
+                  }}>
+            <Text>Wallet Library</Text>
           </Button>
         </Content>
       </Container>

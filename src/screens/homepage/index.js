@@ -18,7 +18,7 @@ export default class Homepage extends Component {
           <Right/>
         </Header>
 
-        <Content>
+        <Content style={{padding: 5}}>
           <Button block style={s.button}
                   onPress={() => {
                     this.props.navigation.navigate('Bip39')

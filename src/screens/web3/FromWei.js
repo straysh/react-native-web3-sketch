@@ -61,7 +61,7 @@ export default class FromWei extends Component {
           <Right/>
         </Header>
 
-        <Content>
+        <Content style={{padding: 5}}>
           <Button block style={s.button}
                   onPress={() => {
                     this.props.navigation.navigate('Renderlog', {run: this.fromWei})

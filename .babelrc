@@ -11,6 +11,7 @@
         "root": "./src",
         "alias": {
           "assets": "./assets",
+          "lib": "./lib",
           "tests": "./tests"
         }
       }
